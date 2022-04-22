@@ -1,0 +1,148 @@
+    /* Global */
+* {
+    margin: 0px;
+    padding: 0px;
+  }
+  body {
+    margin: 0px;
+    padding: 0px;
+    font-size: 20px;
+    font-family: "Montserrat", sans-serif;
+    background-color: #a8dadc;
+  }
+  li {
+    list-style: none;
+  }
+  a {
+    text-decoration: none;
+  }
+
+  .navi{
+      width: 100%;
+      height: 30px;
+      margin: 0px auto 20px;
+      display: flex;
+      justify-content: space-between;
+  }
+  .navi .user-inf {
+    margin: 0px 30px 0px 0px;
+    display: flex;
+    align-items: center;
+  }
+  .navi .user-inf ul {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .cuerpo{
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+  }
+
+  .cuerpo .navegacion{
+      width: 50px;
+      height: 30rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-radius: 0px 8px 8px 0px;
+      background-color: #ededed;
+  }
+
+  .cuerpo .contenido{
+    width: 90%;
+    height: 100%;
+    margin: 0px 20px;
+    padding: 20px;
+}
+
+.cuerpo .contenido .top{
+    width: 100%;
+    height: 100%;
+    margin: 0px 0px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+main .contenido .grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "n1 n2 n3"
+      "n4 n4 n5"
+      "n6 n6 n6";
+    gap: 20px;
+  }
+  .n1,
+  .n2,
+  .n3,
+  .n4,
+  .n5,
+  .n6 {
+    border-radius: 10px;
+  }
+  .n1 {
+    grid-area: n1;
+    height: 80px;
+  }
+  .n2 {
+    grid-area: n2;
+    height: 80px;
+  }
+  .n3 {
+    grid-area: n3;
+    height: 80px;
+  }
+  .n4 {
+    grid-area: n4;
+    height: 20rem;
+  }
+  .n5 {
+    grid-area: n5;
+    height: 20rem;
+  }
+  .n6 {
+    grid-area: n6;
+    height: 18rem;
+    overflow-y: scroll;
+  }
+  main .contenido .grid div {
+    width: 100%;
+    background-color: #ededed;
+  }
+
+  /* Lateral de Apoyo */
+main .lateral {
+    width: 20rem;
+    margin: 0px;
+    padding: 0px;
+    background-color: #ededed;
+    border-radius: 10px 0px 0px 0px;
+  }
+  main .lateral article {
+    width: 90%;
+    margin: 10px auto;
+    padding: 5px;
+    text-align: center;
+  }
+  main .lateral h4 {
+    margin-left: 30px;
+    color: #2b2d42;
+    font-size: 16px;
+  }
+  main .lateral article .chat {
+    margin: auto;
+    width: 90%;
+    height: 300px;
+    box-sizing: content-box;
+    background-color: #a8dadc;
+    border-radius: 10px;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }

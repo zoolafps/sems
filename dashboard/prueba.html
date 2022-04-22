@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+
+    <!--  CUSTOM CSS -->
+    <link rel="stylesheet" href="css/prueba.css" />
+
+    <!--  FONTAWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+
+    <!--  GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--  CALENDAR JS -->
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar-scheduler@5.10.1/main.min.js"></script>
+
+    <!--  CHART JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+  </head>
+  <body>
+    <!--  NAVEGACION -->
+    <nav class="navi">
+      <!--  logo -->
+      <div class="logo">
+        <i class="fas fa-house-user"></i>
+      </div>
+
+      <!--  busqueda -->
+      <div class="search">
+        <input type="search" name="" id="search" />
+        <label for="search"><i class="fas fa-search"></i></label>
+      </div>
+
+      <!--  user_inf -->
+      <div class="user-inf">
+        <i class="fas fa-user-tie"></i>
+        <ul>
+          <h5>user_name</h5>
+          <h6>etc...</h6>
+        </ul>
+      </div>
+    </nav>
+
+    <!--  CUERPO -->
+    <main class="cuerpo">
+
+    <!--  NAV_LATERAL -->
+    <nav class="navegacion">
+      <ul>
+        <li>
+          <a href="http://localhost/proyecto/dashboard"
+            ><i class="fas fa-home"></i
+          ></a>
+        </li>
+        <li>
+          <a href="http://localhost/proyecto/dashboard/personal.php"
+            ><i class="fas fa-users"></i
+          ></a>
+        </li>
+        <li>
+          <a href=""><i class="fas fa-archive"></i></a>
+        </li>
+        <li>
+          <a href=""><i class="fas fa-chart-pie"></i></a>
+        </li>
+        <li>
+          <a href=""><i class="fas fa-cloud"></i></a>
+        </li>
+        <li>
+          <a href=""><i class="fas fa-cash-register"></i></a>
+        </li>
+        <li>
+          <a href=""><i class="fas fa-cart-plus"></i></a>
+        </li>
+        <li>
+          <a href=""><i class="fas fa-bell"></i></a>
+        </li>
+        <li>
+          <a href=""><i class="fas fa-comments"></i></a>
+        </li>
+        <li></li>
+      </ul>
+    </nav>
+
+    <!--  CONTENIDO -->
+    <section class="contenido">
+      <article class="top">
+        <h4>DASHBOARD</h4>
+        <h4>General</h4>
+      </article>
+      <article class="grid">
+        <div class="n1"></div>
+        <div class="n2"></div>
+        <div class="n3"></div>
+        <div class="n4">
+          <div>
+          </div>
+        </div>
+        <div class="n5">
+          <div>
+
+          </div>
+        </div>
+        <div class="n6">
+
+        </div>
+      </article>
+    </section>
+
+    <!-- LATERAL -->
+    <aside class="lateral">
+      <!-- calendario -->
+      <article>
+        <h4>calendario</h4>
+        <div class="calendar" id="calendar"></div>
+      </article>
+      <!-- chat -->
+      <article>
+        <h4>comunicacion</h4>
+        <div class="chat" id="chat">
+          <div class="post"></div>
+          <div class="post"></div>
+          <div class="post"></div>
+          <div class="post"></div>
+          <div class="post"></div>
+          <div class="post"></div>
+          <div class="post"></div>
+          <div class="post"></div>
+        </div>
+        <form action="" method="post">
+          <input type="text" name="" id="" /><input
+            type="submit"
+            value="enviar"
+          />
+        </form>
+      </article>
+    </aside>
+
+</main>
+
+<!-- CHART JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js" integrity="sha512-TW5s0IT/IppJtu76UbysrBH9Hy/5X41OTAbQuffZFU6lQ1rdcLHzpU5BzVvr/YFykoiMYZVWlr/PX1mDcfM9Qg=="crossorigin="anonymous"referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+
+      document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: 'dayGridMonth'
+        });
+        calendar.render();
+      });
+
+    </script>
+  </body>
+</html>
