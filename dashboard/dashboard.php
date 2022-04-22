@@ -1,0 +1,15 @@
+<?php
+require('layout/1.header.html');
+?>
+<?php
+require('layout/2.navegacion.html');
+?>
+<?php
+require('layout/4.lateral.html');
+?>
+<?php
+require('layout/3.contenido.html');
+?>
+<?php
+require('layout/5.footer.html');
+?>

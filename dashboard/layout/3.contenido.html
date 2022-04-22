@@ -1,0 +1,140 @@
+<section class="contenido">
+  <article class="top">
+    <h4>DASHBOARD</h4>
+    <h4>General</h4>
+  </article>
+  <article class="grid">
+    <div class="n1"></div>
+    <div class="n2"></div>
+    <div class="n3"></div>
+    <div class="n4">
+      <div>
+        <canvas id="myChart">
+        <script>
+          const ctx = document.getElementById("myChart").getContext("2d");
+          const myChart = new Chart(ctx, {
+            type: "bar",
+            data: {
+              labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+              datasets: [
+                {
+                  label: "# of Votes",
+                  data: [12, 19, 3, 5, 2, 3],
+                  backgroundColor: [
+                    "rgba(255, 99, 132, 0.2)",
+                    "rgba(54, 162, 235, 0.2)",
+                    "rgba(255, 206, 86, 0.2)",
+                    "rgba(75, 192, 192, 0.2)",
+                    "rgba(153, 102, 255, 0.2)",
+                    "rgba(255, 159, 64, 0.2)",
+                  ],
+                  borderColor: [
+                    "rgba(255, 99, 132, 1)",
+                    "rgba(54, 162, 235, 1)",
+                    "rgba(255, 206, 86, 1)",
+                    "rgba(75, 192, 192, 1)",
+                    "rgba(153, 102, 255, 1)",
+                    "rgba(255, 159, 64, 1)",
+                  ],
+                  borderWidth: 1,
+                },
+              ],
+            },
+            options: {
+              scales: {
+                y: {
+                  beginAtZero: true,
+                },
+              },
+            },
+          });
+        </script>
+        </canvas>
+      </div>
+    </div>
+    <div class="n5">
+      <div>
+        <canvas id="myChart">
+        <script>
+          const ctx = document.getElementById("myChart").getContext("2d");
+          const myChart = new Chart(ctx, {
+            type: "doughnut",
+            data: {
+              labels: ["Red", "Blue", "Yellow"],
+              datasets: [
+                {
+                  label: "# of Votes",
+                  data: [12, 19, 3, 5, 2, 3],
+                  backgroundColor: [
+                    "rgba(255, 99, 132, 0.2)",
+                    "rgba(54, 162, 235, 0.2)",
+                    "rgba(255, 206, 86, 0.2)",
+                    "rgba(75, 192, 192, 0.2)",
+                    "rgba(153, 102, 255, 0.2)",
+                    "rgba(255, 159, 64, 0.2)",
+                  ],
+                },
+              ],
+            },
+            options: {
+              scales: {
+                y: {
+                  beginAtZero: true,
+                },
+              },
+            },
+          });
+        </script>
+        </canvas>
+      </div>
+    </div>
+    <div class="n6">
+      <?php
+      $conn = mysqli_connect(
+        'localhost',
+        'root',
+        '',
+        'sems'
+      ) or die(mysqli_erro($mysqli));
+
+      ?>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>nombre</th>
+            <th>Description</th>
+            <th>Created At</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php
+          $query = "SELECT * FROM users_db";
+          $result_tasks = mysqli_query($conn, $query);
+
+          while ($row = mysqli_fetch_assoc($result_tasks)) { ?>
+          <tr>
+            <td><?php echo $row['title']; ?></td>
+            <td><?php echo $row['description']; ?></td>
+            <td><?php echo $row['created_at']; ?></td>
+            <td>
+              <a
+                href="edit.php?id=<?php echo $row['id'] ?>"
+                class="btn btn-secondary"
+              >
+                <i class="fas fa-marker"></i>
+              </a>
+              <a
+                href="delete_task.php?id=<?php echo $row['id'] ?>"
+                class="btn btn-danger"
+              >
+                <i class="far fa-trash-alt"></i>
+              </a>
+            </td>
+          </tr>
+          <?php } ?>
+        </tbody>
+      </table>
+    </div>
+  </article>
+</section>

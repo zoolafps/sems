@@ -1,0 +1,267 @@
+/* Global */
+* {
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  margin: 0px;
+  padding: 0px;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  background-color: #a8dadc;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+/* Navegacion Principal */
+.navi {
+  width: 100%;
+  height: 34px;
+  background-color: #ededed;
+  color: #1d3557;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.navi .logo {
+  margin: 0px 30px;
+}
+.navi .search {
+  margin: auto;
+}
+.navi .search input {
+  background-color: #2b2d42;
+  width: 30rem;
+  height: 20px;
+  border: none;
+  border-radius: 8px;
+  color: black;
+  font-size: 16px;
+  text-decoration: none;
+}
+.navi .user-inf {
+  margin: 0px 30px 0px 0px;
+  display: flex;
+  align-items: center;
+}
+.navi .user-inf ul {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Estructura del Dashboard */
+.cuerpo {
+  margin: 20px 0px;
+  width: 100%;
+  height: 40rem;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-areas:
+    "nav sec sec sec sec asi asi"
+    "nav sec sec sec sec asi asi"
+    "nav sec sec sec sec asi asi";
+  gap: 20px;
+}
+
+/* Menu de Navegacion */
+main .navegacion {
+  grid-area: nav;
+  width: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #ededed;
+  border-radius: 0px 10px 0px 0px;
+  color: #2b2d42;
+  font-size: 30px;
+}
+main .navegacion ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .navegacion ul li a {
+  color: #2b2d42;
+  margin: 10px 0px;
+  padding: 6px;
+}
+
+/* CONTENIDO PRINCIPAL */
+main .contenido {
+  width: 100%;
+  margin: 0px auto;
+  grid-area: sec;
+  color: #2b2d42;
+}
+main .contenido .top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+main .contenido .grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    "n1 n2 n3"
+    "n4 n4 n5"
+    "n6 n6 n6";
+  gap: 20px;
+}
+.n1,
+.n2,
+.n3,
+.n4,
+.n5,
+.n6 {
+  border-radius: 10px;
+}
+.n1 {
+  grid-area: n1;
+  height: 80px;
+}
+.n2 {
+  grid-area: n2;
+  height: 80px;
+}
+.n3 {
+  grid-area: n3;
+  height: 80px;
+}
+.n4 {
+  grid-area: n4;
+  height: 20rem;
+}
+div.n4 div {
+  margin: 20px auto;
+  width: 200px;
+  height: 200px;
+}
+.n5 {
+  grid-area: n5;
+  height: 20rem;
+}
+div.n5 div {
+  margin: 20px auto;
+  width: 200px;
+  height: 200px;
+}
+.n6 {
+  grid-area: n6;
+  height: 18rem;
+  overflow-y: scroll;
+}
+.n6 table {
+  width: 100%;
+}
+.n6 table thead tr th {
+  width: auto;
+  margin: 0px;
+}
+.n6 table tbody tr td {
+  width: auto;
+  margin: 0px;
+  text-align: center;
+}
+main .contenido .grid div {
+  width: 100%;
+  background-color: #ededed;
+}
+
+/* Lateral de Apoyo */
+main .lateral {
+  grid-area: asi;
+  margin: 0px;
+  padding: 0px;
+  background-color: #ededed;
+  border-radius: 10px 0px 0px 0px;
+}
+main .lateral article {
+  width: 90%;
+  margin: 10px auto;
+  padding: 5px;
+  text-align: center;
+}
+main .lateral h4 {
+  margin-left: 30px;
+  color: #2b2d42;
+  font-size: 16px;
+}
+main .lateral article .chat {
+  margin: auto;
+  width: 90%;
+  height: 300px;
+  box-sizing: content-box;
+  background-color: #a8dadc;
+  border-radius: 10px;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+main .lateral article .chat .post {
+  width: 90%;
+  min-height: 30px;
+  margin: 5px auto;
+  padding: 5px;
+  box-shadow: 2px 2px 5px 2px #2b2d42;
+  border-radius: 8px;
+  background-color: #fff;
+}
+main .lateral article .chat form {
+  z-index: 100;
+  box-sizing: content-box;
+  width: 100%;
+  background-color: #fff;
+}
+
+@media (max-width: 700px) {
+  /* Navegacion Principal */
+  .navi {
+    display: none;
+  }
+
+  /* Estructura del Dashboard */
+  .cuerpo {
+    margin: 20px auto;
+    width: 90%;
+    height: 40rem;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+      "asi "
+      "sec "
+      "sec ";
+    gap: 20px;
+  }
+  /* Menu de Navegacion */
+  main .navegacion {
+    display: none;
+  }
+  main .contenido .grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas:
+      "n1"
+      "n2"
+      "n3"
+      "n4"
+      "n5"
+      "n6";
+    gap: 20px;
+  }
+  main .lateral {
+    border-radius: 8px 8px 8px 8px;
+    margin: 20px 0;
+  }
+}

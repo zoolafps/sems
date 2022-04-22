@@ -1,0 +1,50 @@
+<section class="contenido">
+    <article class="top">
+      <h4>personal</h4>
+    </article>
+    <article class="grid">
+      <div class="n6">
+        <?php
+        $conn = mysqli_connect(
+          'localhost',
+          'root',
+          '',
+          'sems'
+        ) or die(mysqli_erro($mysqli));
+  
+        ?>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>nombre</th>
+              <th>Description</th>
+              <th>Created At</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+  
+            <?php
+            $query = "SELECT * FROM users_db";
+            $result_tasks = mysqli_query($conn, $query);
+  
+            while ($row = mysqli_fetch_assoc($result_tasks)) { ?>
+              <tr>
+                <td><?php echo $row['title']; ?></td>
+                <td><?php echo $row['description']; ?></td>
+                <td><?php echo $row['created_at']; ?></td>
+                <td>
+                  <a href="edit.php?id=<?php echo $row['id'] ?>" class="btn btn-secondary">
+                    <i class="fas fa-marker"></i>
+                  </a>
+                  <a href="delete_task.php?id=<?php echo $row['id'] ?>" class="btn btn-danger">
+                    <i class="far fa-trash-alt"></i>
+                  </a>
+                </td>
+              </tr>
+            <?php } ?>
+          </tbody>
+        </table>
+      </div>
+    </article>
+  </section>
